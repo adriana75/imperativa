@@ -34,10 +34,10 @@ console.log("El valor de la hora de trabajo es: " + valorHora(sueldo));
 /*Crear la función calculadorIMC() que reciba la altura en metros y el peso en
 kilogramos y calcule el IMC de una persona. Luego, ejecutar la función
 probando diferentes valores.*/
-const IMC = (altura, peso) => peso/(altura*altura)
+const calculadorIMC = (altura, peso) => peso/(altura*altura)
 let altura = prompt("Ingrese su altura en metros: ")
 let peso = prompt("Ingrese su peso en kilogramos: ")
-console.log("Su IMC es: " + IMC(altura, peso))
+console.log("Su IMC es: " + calculadorIMC(altura, peso))
 
 //Crear una función que recibe un string en minúscula, lo convierta a mayúsculas y lo retorne.
 function upper (cadena) {
