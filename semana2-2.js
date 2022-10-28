@@ -60,7 +60,7 @@ console.log("Función flecha: " + tipoDatoF(dato))
 //Crear una función que le pasamos el radio de un círculo y nos devuelve la circunferencia.
 function calculaCircunferencia(radio) {
     return 2 * Math.PI * radio;
-  }
+}
 const calculaCircunferenciaF = radio => 2 * Math.PI * radio
 let radio = prompt("Ingrese el valor del radio: ")
 console.log("Función declarada - La circunferencia es: " + calculaCircunferencia(radio))
