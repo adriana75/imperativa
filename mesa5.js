@@ -11,4 +11,4 @@ const totalAPagar = (vehiculo, litrosConsumidos) => {
     return pagar
 }
 
-console.log(totalAPagar("moto", 26));
+//console.log(totalAPagar("moto", 26));
