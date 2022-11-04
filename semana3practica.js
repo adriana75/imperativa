@@ -1,49 +1,92 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
-const getRandomIntInclusive = (min, max) => {
-   let aleatorio = Math.floor(Math.random()*(max-min+1)+min)
-   return aleatorio
-}
+//Ejercicio 1
+const saludo = frase => frase
+let frase = saludo("Hola")
+console.log("Ejercicio 1: ", frase);
+console.log("----------");
+
+//Ejercicio 2
+const saludoNombre = nombre => `Hola ${nombre}!`
+let fraseNombre = saludoNombre("Adriana")
+console.log("Ejercicio 2: ", fraseNombre);
+console.log("----------");
+
+//Ejercicio 3
+const sumar = (num1, num2) => num1 + num2
+let suma = sumar(3, 5)
+console.log("Ejercicio 3: ", suma);
+console.log("----------");
+
+//Ejercicio 4
+const edad = year => `Tienes ${2022-year} años`
+let resultadoEdad = edad(1988)
+console.log("Ejercicio 4: ", resultadoEdad);
+console.log("----------");
+
+//Ejercicio 5
 const adivinar = numero => {
-    let aleatorio = getRandomIntInclusive(1,10);
+    let min = 1
+    let max = 10
+    let aleatorio = Math.floor(Math.random()*(max-min+1)+min)
     return aleatorio == numero ? "Felicitaciones, ese era!" : "Lo siento, intenta nuevamente!"
 }
 let numero = adivinar(10)
-//console.log(numero);
+console.log("Ejercicio 5: ", numero);
 
+//Ejercicio 6
 const esPar = () => {
     for (let i = 1; i <=100; i++){
         i%2==0 ? console.log(i) : "" 
     }
 }
-//esPar()
+console.log("Ejercicio 6: ");
+esPar()
+console.log("----------");
 
+//Ejercicio 7
 const nombres = ["Pedro", "Pablo", "Maria", "Juan", "Diana"];
-const iterar = nombres => {
-    nombres.forEach(element => {
-        console.log(element)
-    });
+const iterar = nombres => nombres.forEach(element => {console.log(element)})
+const iterar2 = nombres => {
+    for(const iterator of nombres){
+        console.log(iterator)
+    }
 }
-//iterar(nombres)
+const iterar3 = nombres =>{
+    for (let i = 0; i < nombres.length; i++){
+        const element = nombres[i];
+        console.log(element);  
+    }
+} 
+console.log("Ejercicio 7: ");
+iterar3(nombres)
+console.log("----------");
 
+//Ejercicio 8
 const porcentaje = numero => (numero > 500) ? numero*18/100 : ""
 let num = porcentaje(100)
-//console.log(num);
+console.log("Ejercicio 8: ", num);
+console.log("----------");
 
+//Ejercicio 9
 const arreglo = [1, 2, 3, 4, 5];
-const elemento = arreglo => {
-    return arreglo.length>2 ? arreglo[2] : -1
-}
+const elemento = arreglo => arreglo.length>2 ? arreglo[2] : -1
 let arrays = elemento(arreglo)
-//console.log(arrays);
+console.log("Ejercicio 9: ", arrays);
+console.log("----------");
 
+//Ejercicio 10
 const numArray = numero => {
     let intArray = Array.from(String(numero), Number)
-    return intArray.length==1 ? "Falta 1" : "Falta 2"
+    return intArray.length<=2 ? "Falta 1" : "Falta 2"
 }
-//console.log(numArray(1))
-//console.log(numArray(11));
+console.log("Ejercicio 10: ");
+console.log(numArray(1))
+console.log(numArray(11));
 
+console.log("----------");
+
+//Ejercicio 11
 const promedio = n => {
     let notas = []
     let contador = 0
@@ -56,9 +99,21 @@ const promedio = n => {
     let prom = contador/n
     return prom
 }
-//console.log(promedio(2));
+const promedio1 = (n, notas) => {
+    let contador = 0
+    for (let i = 0; i < n; i++){
+        contador += notas[i]
+    }
+    let prom = contador/n
+    return prom
+}
+//console.log("Ejercicio 11: ", promedio(2));
+let notas = [5, 2.5, 4]
+console.log("Ejercicio 11: ", promedio1(3, notas));
+console.log("----------");
 
-const sumaNaturales = n => {
+//Ejercicio 12
+const sumaNaturalesArray = n => {
     let numeros = []
     let suma = 0
     numeros.length = n
@@ -68,43 +123,15 @@ const sumaNaturales = n => {
     }
     return suma
 }
-//console.log(sumaNaturales(5));
-
-//Mesa de trabajo
-
-/*
-if(edad < 18) {
-console.log("No puede pasar al bar.")
-} else if (edad < 21){
-console.log("Puede pasar al bar, pero no puede tomar alcohol.")
-} else {
-console.log("Puede pasar al bar y tomar alcohol.")
-}*/
-let edad = 20
-if(edad<0){
-    console.log("Error, edad inválida. Por favor ingrese un número válido.")
-}else if(edad > 21){
-    console.log("Mayor de edad, felicitaciones")
-    edad%2!=0 ? console.log("¿Sabías que tu edad es impar?") : ""
-}
-
-const totalAPagar = (vehiculo, litrosConsumidos) => {
-    let pagar = 0
-
-    if(vehiculo=="coche"){
-        pagar = 86*litrosConsumidos
-    } else if (vehiculo=="moto"){
-        pagar = 70*litrosConsumidos
-    }else if(vehiculo=="autobús"){
-        pagar = 55*litrosConsumidos
+const sumaNaturales = n => {
+    let suma = 0
+    for (let i = 1; i <= n; i++) {
+        suma += i
     }
-
-    litrosConsumidos >=0 && litrosConsumidos<=25 ? pagar += 50 : pagar +=25
-    return pagar
-} 
-
-let cancelar = totalAPagar("coche", 26)
-console.log(cancelar);
+    return suma
+}
+console.log("Ejercicio 12: ", sumaNaturales(5));
+console.log("----------");
 
 
 
