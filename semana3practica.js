@@ -65,7 +65,7 @@ console.log("----------");
 //Ejercicio 8
 const porcentaje = numero => (numero > 500) ? numero*18/100 : ""
 let num = porcentaje(100)
-console.log("Ejercicio 8: ", num);
+console.log("Ejercicio 8: ", num, "%");
 console.log("----------");
 
 //Ejercicio 9
@@ -107,9 +107,18 @@ const promedio1 = (n, notas) => {
     let prom = contador/n
     return prom
 }
+const promedio2 = (notas) => {
+    let contador = 0
+    let n = notas.length
+    for (let i = 0; i < n; i++){
+        contador += notas[i]
+    }
+    let prom = contador/n
+    return prom
+}
 //console.log("Ejercicio 11: ", promedio(2));
 let notas = [5, 2.5, 4]
-console.log("Ejercicio 11: ", promedio1(3, notas));
+console.log("Ejercicio 11: ", promedio2(notas));
 console.log("----------");
 
 //Ejercicio 12
