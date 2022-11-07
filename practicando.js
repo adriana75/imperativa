@@ -158,11 +158,11 @@ console.log('-------');
 //Escribir un programa que nos diga si un número dado es primo 
 //(no es divisible por ninguno otro número que no sea él mismo o la unidad)
 const primo = numero => {
-    if (numero == 0 || numero == 1 || numero == 4) return 'No es primo';
+    //if (numero == 0 || numero == 1 || numero == 4) return 'No es primo';
 	for (let i = 2; i < numero; i++) {
 		if (numero % i == 0) return 'No es primo';
 	}
 	return 'Es primo';
 }
-console.log(primo(97));
+console.log(primo(4));
 console.log(primo(1));
