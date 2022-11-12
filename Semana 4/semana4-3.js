@@ -27,6 +27,7 @@ let concurso = {
     },
     exportarResultado: function(){
         let nuevoArr = []
+        let obj = {}
         for(let i = 0; i < this.etapas.length; i++){
             let ganador = this.etapas[i]
             let nuevoObj = {}
@@ -34,6 +35,8 @@ let concurso = {
             nuevoObj.Ganador = ganador
             nuevoArr.push(nuevoObj)
         }
+        obj.GanadorFinal = this.ganador
+        nuevoArr.push(obj)
         return nuevoArr
     }
 }
