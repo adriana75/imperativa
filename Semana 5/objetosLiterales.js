@@ -75,14 +75,14 @@ let cuentas = {
     habilitadas: function(arr){
         let cuentasHab = []
         for(let i=0; i<arr.length; i++){
-            arr[i].estaHabilitada == true ? cuentasHab.push(arr[i].titular) : ""
+            arr[i].estaHabilitada ? cuentasHab.push(arr[i].titular) : ""
         }
         return cuentasHab
     },
     deshabilitadas: function(arr){
         let cuentasDes = []
         for(let i=0; i<arr.length; i++){
-            arr[i].estaHabilitada != true ? cuentasDes.push(arr[i].titular) : " "
+            !arr[i].estaHabilitada ? cuentasDes.push(arr[i].titular) : " "
         }
         return cuentasDes
     },
@@ -118,11 +118,9 @@ let cuentas = {
         let encontrado = null
         for(let i=0; i < arr.length; i++){
             if(arr[i].id == id){
-                encontrado = arr[i]
-                break
+                return encontrado = arr[i]
             }
         }
-        return encontrado
     },
     filtrarPorSaldos: function(arr, saldo){
         let arraySaldos = []
@@ -153,8 +151,8 @@ let cuentas = {
 //console.log(arrayCuentas);
 let arrayNuevo = cuentas.generarID(arrayCuentas)
 //console.log(arrayNuevo);
-//console.log(cuentas.buscarPorID(arrayNuevo, 4));
+//console.log(cuentas.buscarPorID(arrayNuevo, 3));
 //console.log(cuentas.filtrarPorSaldos(arrayCuentas, 1500));
-console.log(cuentas.arreglo[3]);
-console.log(cuentas.incrementarSaldo(arrayNuevo, 4, 1000));
+//console.log(cuentas.arreglo[3]);
+//console.log(cuentas.incrementarSaldo(arrayNuevo, 4, 1000));
 
