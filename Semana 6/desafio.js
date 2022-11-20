@@ -21,7 +21,7 @@ const totalGastosSemana = (arr, semana) =>{
     }
     console.log(`El gasto de la semana ${semana} es: ${total}`);
 }
-totalGastosSemana(gastos, 4)
+//totalGastosSemana(gastos, 4)
 
 //Total de gastos por día
 const totalGastosDia = arr =>{   
@@ -43,7 +43,7 @@ const totalGastosD = (arr, dia) =>{
     }
     console.log(`El gasto del día ${dia} es: ${total}`);
 }
-totalGastosD(gastos, 7)
+//totalGastosD(gastos, 7)
 
 //Total de gastos del mes
 const totalGastosMes = arr =>{   
@@ -65,10 +65,10 @@ const semanaMasGastos = (arr) =>{
         let total = 0
         for(let columna = 0; columna < arr[fila].length; columna++){
             total += arr[fila][columna]
-            if(total > mayor){
-                mayor = total
-                semana = fila + 1
-            }
+        }
+        if(total > mayor){
+            mayor = total
+            semana = fila + 1
         }
     }
     console.log(`La semana con más gastos es la ${semana} con gastos: ${mayor}`);    
@@ -83,10 +83,10 @@ const diaMasGastos = (arr) =>{
         let total = 0
         for(let fila = 0; fila < arr.length; fila++){
             total += arr[fila][columna]
-            if(total > mayor){
-                mayor = total
-                dia = columna + 1
-            }
+        }
+        if(total > mayor){
+            mayor = total
+            dia = columna + 1
         }
     }
     console.log(`El día con más gastos es el ${dia} con gastos: ${mayor}`);    
