@@ -20,5 +20,7 @@ const multiplos = () => {
     return Number(nuevoNumero)
   };
   let numeroInvertido = invertir(356);
-  console.log(numeroInvertido);
+  //console.log(numeroInvertido);
+
+ 
   
