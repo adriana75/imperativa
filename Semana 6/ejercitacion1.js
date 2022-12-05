@@ -26,13 +26,15 @@ for(let i=0; i<arrayMatriz.length; i++) {
 }
 
 //Primera columna
+let col = 0
 for(let i=0; i<arrayMatriz.length; i++) {
-    //console.log(arrayMatriz[i][0])
+    //console.log(arrayMatriz[i][col])
 }
 
-//Primera fila
-for(let i=0; i<=arrayMatriz.length; i++) {
-    //console.log(arrayMatriz[0][i])
+//Segunda fila
+let fila = 1
+for(let i=0; i<=arrayMatriz[fila].length; i++) {
+    //console.log(arrayMatriz[fila][i])
 }
 
 //Bucle que recorre el primer array
