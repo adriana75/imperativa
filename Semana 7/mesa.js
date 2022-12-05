@@ -17,19 +17,21 @@ let arr2 = [1,2,3,4,5,6,7,8] // true
 
 const generarMatriz = (f, c)=>{
     let matriz = []
-    let a = 0
+    let a = 1
     for (let i = 0; i < f; i++) {
         matriz[i] = [];
-    }
-    for (let i = 0; i < f; i++) {
         for (let j = 0; j < c; j++) {
-            matriz[i][j] = 1 + a
-            a = matriz[i][j]
+            matriz[i][j] = a++
         }
     }
+    //si las filas y columnas son impares
+    if(matriz.length %2 !== 0){
+        centro = matriz [ (matriz.length -1) / 2][ (matriz.length -1) / 2]
+    }else centro = matriz [ (matriz.length) / 2][ (matriz.length) / 2] //longitud par
+    //console.log(centro);
     return matriz
 }
-let matriz = generarMatriz(5, 5)
+let matriz = generarMatriz(6, 6)
 //console.log(matriz);
 
 const personas =
@@ -139,12 +141,10 @@ const sumaDiagonales = arr =>{
     let diagonalDos = 0
     for (let i = 0; i < arr.length; i++) {
         diagonalUno += arr[i][i]; 
+        diagonalDos += arr[i][ arr.length - 1 - i ] 
     }
-    for (let j = 0; j < arr.length; j++) {
-        diagonalDos += arr[j][ arr.length - 1 - j ] 
-    }
-    arrDiagonales.push(diagonalUno+centro)
-    arrDiagonales.push(diagonalDos+centro)
+    arrDiagonales.push(diagonalUno)
+    arrDiagonales.push(diagonalDos)
     return arrDiagonales
 }
 //console.log(sumaDiagonales(matriz2));
