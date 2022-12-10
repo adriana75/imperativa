@@ -18,3 +18,6 @@ console.log(suma);
 list.forEach(function(numeros, indice){
     console.log(`En la posición ${indice}: valor ${numeros}`);
 });
+
+let encontrado = list.find(element => element == 3);
+console.log(encontrado);

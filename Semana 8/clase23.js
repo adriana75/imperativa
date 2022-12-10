@@ -78,7 +78,7 @@ const buscarNombre = (persona,edad)=> {
             const mid = Math.floor((low + high) / 2);
             const guess = persona[mid];
             if (guess.edad === edad) {
-                console.log(guess.nombre);;
+                console.log(guess.nombre);
             }
             if (guess.edad > edad) {
                 high = mid - 1;
